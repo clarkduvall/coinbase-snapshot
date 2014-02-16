@@ -10,9 +10,10 @@ from flask import session
 from flask import url_for
 
 app = Flask(__name__, static_url_path='/s', static_folder='static')
+app.debug = True
 app.secret_key = os.environ['FLASK_SECRET']
 
-ACCESS_TOKEN_URL = '<API ACCESS TOKEN ENDPOINT HERE>'
+ACCESS_TOKEN_URL = 'https://coinbase.com/oauth/token'
 API_CLIENT_ID = os.environ['API_CLIENT_ID']
 API_CLIENT_SECRET = os.environ['API_CLIENT_SECRET']
 
