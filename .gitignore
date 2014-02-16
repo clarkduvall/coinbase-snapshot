@@ -1,0 +1,5 @@
+*.swp
+.sass-cache/
+venv/
+*.pyc
+.env
