@@ -1,2 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700)
+
+$font: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif
+$color: #348eda
+$light: lighten($color, 30%)
+$yellow: complement(lighten($color, 30%))
+$red: #fbb
+$green: #9cda9c
+
 body
   margin: 0
+  font-family: $font
+  background: $color
+  color: white
+
+a
+  font-weight: bold
+  color: white
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+#dashboard
+  text-align: center
+  font-size: 37px
+  margin-bottom: 20px
+
+  hr
+    width: 300px
+    margin: 10px auto
+    border: none
+    border-bottom: 3px solid $light
+
+  .auth
+    display: none
+
+  .btc
+    color: $light
+
+  .usd
+    color: $yellow
+
+  .pos
+    color: $green
+
+  .neg
+    color: $red
+
+  h1
+    font-size: 60px
+    margin-bottom: 0
+
+  h2
+    font-size: 37px
+    margin-bottom: 10px
+
+  h3
+    font-size: 23px
+    margin: 20px 0 0 0
+
+.sub
+  font-size: 23px
+
+.error
+  display: none
+  color: $red

@@ -1,24 +1,67 @@
 <!doctype html>
 <html>
   <head>
-    <title>Fleroku</title>
+    <title>Coinbase Dashboard</title>
     <link rel="icon" href="/s/favicon.ico">
     <meta name="description" content="Starter Heroku/Flask project.">
     <meta property="og:image" content="http://domain.com/s/image.png">
     <link type="text/css" rel="stylesheet" href="/s/css/style.css">
   </head>
   <body>
-    {% if token %}
-    <h1>You are autenticated! <a href="/logout">Logout</a></h1>
-    {% else %}
-    <h1>Hello! You are not authenticated. <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}">Login</a></h1>
-    {% endif %}
-    <form>
-      <input type="text">
-      <button type="submit">Submit</button>
-    </form>
-    <pre id="output">
-    </pre>
+    <div id="dashboard">
+      <h1>Coinbase Snapshot</h1>
+      {% if not token %}
+      <div class="sub">
+        <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">Login</a> to see your dashboard
+      </div>
+      {% endif %}
+      <div class="sub error">
+        There was an error accessing your account. Please <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">login</a> again.
+      </div>
+
+      <div>
+        <h2>Price</h2>
+        <span class="btc">1 BTC</span> =
+        <span class="price-usd usd"></span>
+      </div>
+
+      <div class="auth">
+        <h2>Balance</h2>
+        <div>
+          <span class="balance-btc btc"></span> =
+          <span class="balance-usd usd"></span>
+        </div>
+
+        <h2>Net Gain/Loss</h2>
+        <div>
+          <div>
+            Buys: <span class="buys-btc btc"></span> for
+            <span class="buys-usd neg"></span>
+          </div>
+          <div>
+            Sells: <span class="sells-btc btc"></span> for
+            <span class="sells-usd pos"></span>
+          </div>
+          <div>
+            Current: <span class="balance-btc btc"></span> =
+            <span class="balance-usd pos"></span>
+          </div>
+          <hr>
+          <div>
+            <span class="purchase-diff"></span>
+          </div>
+        </div>
+
+        <div class="orders">
+          <h2>Orders</h2>
+          <div>
+            <span class="orders-btc btc"></span> =
+            <span class="orders-usd usd"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript">
       API_TOKEN = '{{ token }}';

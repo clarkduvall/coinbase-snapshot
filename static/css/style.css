@@ -1,2 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #348eda;
+  color: white; }
+
+a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+#dashboard {
+  text-align: center;
+  font-size: 37px;
+  margin-bottom: 20px; }
+  #dashboard hr {
+    width: 300px;
+    margin: 10px auto;
+    border: none;
+    border-bottom: 3px solid #b5d6f2; }
+  #dashboard .auth {
+    display: none; }
+  #dashboard .btc {
+    color: #b5d6f2; }
+  #dashboard .usd {
+    color: #f2d1b5; }
+  #dashboard .pos {
+    color: #9cda9c; }
+  #dashboard .neg {
+    color: #ffbbbb; }
+  #dashboard h1 {
+    font-size: 60px;
+    margin-bottom: 0; }
+  #dashboard h2 {
+    font-size: 37px;
+    margin-bottom: 10px; }
+  #dashboard h3 {
+    font-size: 23px;
+    margin: 20px 0 0 0; }
+
+.sub {
+  font-size: 23px; }
+
+.error {
+  display: none;
+  color: #ffbbbb; }
