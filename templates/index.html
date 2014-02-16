@@ -11,7 +11,7 @@
     {% if token %}
     <h1>You are autenticated! <a href="/logout">Logout</a></h1>
     {% else %}
-    <h1>Hello! You are not authenticated. <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}">Login</a></h1>
+    <h1>Hello! You are not authenticated. <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri=http%3A%2F%2Fcoinbasedashboard.herokuapp.com%2Fcallback">Login</a></h1>
     {% endif %}
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript">
