@@ -13,6 +13,12 @@
     {% else %}
     <h1>Hello! You are not authenticated. <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}">Login</a></h1>
     {% endif %}
+    <form>
+      <input type="text">
+      <button type="submit">Submit</button>
+    </form>
+    <div id="output">
+    </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript">
       API_TOKEN = '{{ token }}';
