@@ -1,5 +1,4 @@
 import os
-import urllib
 
 import requests
 
@@ -17,7 +16,7 @@ app.secret_key = os.environ['FLASK_SECRET']
 ACCESS_TOKEN_URL = 'https://coinbase.com/oauth/token'
 API_CLIENT_ID = os.environ['API_CLIENT_ID']
 API_CLIENT_SECRET = os.environ['API_CLIENT_SECRET']
-REDIRECT_URL = urllib.quote('http://coinbasedashboard.herokuapp.com/callback')
+REDIRECT_URL = 'http://coinbasedashboard.herokuapp.com/callback'
 
 
 @app.route('/callback')
