@@ -1,1 +1,1 @@
-web: gunicorn flask:app -k gevent
+web: gunicorn server:app -k gevent
