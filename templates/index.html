@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <title>Coinbase Dashboard</title>
+    <title>Coinbase Snapshot</title>
     <link rel="icon" href="/s/favicon.ico">
-    <meta name="description" content="Starter Heroku/Flask project.">
+    <meta name="description" content="Coinbase Snapshot">
     <meta property="og:image" content="http://domain.com/s/image.png">
     <link type="text/css" rel="stylesheet" href="/s/css/style.css">
   </head>
@@ -12,7 +12,7 @@
       <h1>Coinbase Snapshot</h1>
       {% if not token %}
       <div class="sub">
-        <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">Login</a> to see your dashboard
+        <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">Login</a> to see your balance, net profit, and orders
       </div>
       {% endif %}
       <div class="sub error">
