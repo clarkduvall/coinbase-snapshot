@@ -1,4 +1,5 @@
 import os
+import urllib
 
 import requests
 
@@ -16,6 +17,7 @@ app.secret_key = os.environ['FLASK_SECRET']
 ACCESS_TOKEN_URL = 'https://coinbase.com/oauth/token'
 API_CLIENT_ID = os.environ['API_CLIENT_ID']
 API_CLIENT_SECRET = os.environ['API_CLIENT_SECRET']
+REDIRECT_URL = urllib.quote('http://coinbasedashboard.herokuapp.com/callback')
 
 
 @app.route('/callback')
@@ -25,8 +27,11 @@ def callback():
         'grant_type': 'authorization_code',
         'client_id': API_CLIENT_ID,
         'client_secret': API_CLIENT_SECRET,
-        'code': request.args.get('code', '')
+        'code': request.args.get('code', ''),
+        'redirect_uri': REDIRECT_URL
     }, headers={'Accept': 'application/json'})
+
+    return response.content
 
     if response.ok:
         session['access_token'] =  response.json()['access_token']
@@ -45,4 +50,5 @@ def logout():
 def index(path=None):
     return render_template('index.html',
                            token=session.get('access_token', ''),
+                           redirect_url=REDIRECT_URL,
                            client_id=API_CLIENT_ID)
