@@ -30,8 +30,6 @@ def callback():
         'redirect_uri': REDIRECT_URL
     }, headers={'Accept': 'application/json'})
 
-    return response.content
-
     if response.ok:
         session['access_token'] =  response.json()['access_token']
 
