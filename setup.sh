@@ -5,9 +5,18 @@ virtualenv venv --distribute
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Create a new heroku app.
-read -p 'Enter app name (will be used for <name>.herokuapp.com): ' app_name
-heroku create $app_name
+read -p "Is this for an existing Heroku app? [y/N] " -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  # Add existing app as remote.
+  read -p 'Enter existing app name: ' app_name
+  heroku git:remote -a $app_name
+else
+  # Create a new heroku app.
+  read -p 'Enter new app name (will be used for <name>.herokuapp.com): ' app_name
+  heroku create $app_name
+fi
+
 
 # Set up the keys for the API/Flask.
 read -p 'Enter API client id: ' client_id
@@ -25,3 +34,14 @@ heroku config | tail -n+2 > .env
 git push heroku master
 heroku ps:scale web=1
 heroku open
+
+echo '
+ _____     ____    _   _   ______
+ |  __ \   / __ \  | \ | | |  ____|
+ | |  | | | |  | | |  \| | | |__
+ | |  | | | |  | | | . ` | |  __|
+ | |__| | | |__| | | |\  | | |____
+ |_____/   \____/  |_| \_| |______|
+'
+
+echo 'Now run "source venv/bin/activate" and have fun!'
