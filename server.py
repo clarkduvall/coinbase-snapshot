@@ -21,6 +21,7 @@ API_CLIENT_SECRET = os.environ['API_CLIENT_SECRET']
 def callback():
     # Customize this code depending on Oauth API.
     response = requests.post(ACCESS_TOKEN_URL, params={
+        'grant_type': 'authorization_code',
         'client_id': API_CLIENT_ID,
         'client_secret': API_CLIENT_SECRET,
         'code': request.args.get('code', '')
@@ -41,4 +42,6 @@ def logout():
 @app.route('/')
 @app.route('/<path:path>')
 def index(path=None):
-    return render_template('index.html', token=session.get('access_token', ''))
+    return render_template('index.html',
+                           token=session.get('access_token', ''),
+                           client_id=API_CLIENT_ID)
