@@ -11,7 +11,8 @@
     {% if token %}
     <h1>You are autenticated!</h1>
     {% else %}
-    <h1>You are not authenticated.
+    <h1>Hello! You are not authenticated.</h1>
+    {% endif %}
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript">
       API_TOKEN = '{{ token }}';

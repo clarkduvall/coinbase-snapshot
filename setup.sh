@@ -14,7 +14,7 @@ read -p 'Enter API client id: ' client_id
 heroku config:set "API_CLIENT_ID=$client_id"
 
 read -p 'Enter API client secret: ' client_secret
-heroku config:set "API_CLIENT_ID=$client_secret"
+heroku config:set "API_CLIENT_SECRET=$client_secret"
 
 heroku config:set "FLASK_SECRET=`cat /dev/urandom | head -c 1 | md5sum - | awk '{print $1}'`"
 
