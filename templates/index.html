@@ -14,7 +14,7 @@
       <h1>Coinbase Snapshot</h1>
       {% if not token %}
       <div class="sub">
-        <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">Login</a> to see your balance, net profit, and orders
+        <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">Authenticate</a> using the official Coinbase API to see your balance, net profit, and orders
       </div>
       {% else %}
       <div class="sub">
