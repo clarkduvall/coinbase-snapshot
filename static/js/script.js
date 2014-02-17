@@ -72,6 +72,8 @@
   Dashboard.prototype.updateAuthed = function() {
     var waiting = 3,
         updateUI = function() {
+          $('.error').hide();
+
           var diff = this.balanceUSD + this.sellsUSD - this.buysUSD;
 
           formatBTC('.buys-btc', this.buysBTC);

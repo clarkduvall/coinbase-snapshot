@@ -8,14 +8,15 @@ $red: #fbb
 $green: #9cda9c
 
 body
-  margin: 0
+  margin: 0 10px
   font-family: $font
   background: $color
   color: white
+  height: 100%
 
 a
   font-weight: bold
-  color: white
+  color: $light
   text-decoration: none
 
   &:hover
@@ -24,7 +25,7 @@ a
 #dashboard
   text-align: center
   font-size: 37px
-  margin-bottom: 20px
+  margin-bottom: 130px
 
   hr
     width: 300px
@@ -49,7 +50,7 @@ a
 
   h1
     font-size: 60px
-    margin-bottom: 0
+    margin-bottom: 10px
 
   h2
     font-size: 37px
@@ -65,3 +66,36 @@ a
 .error
   display: none
   color: $red
+
+#social
+  position: fixed
+  bottom: 0
+  left: 0
+  margin: 10px
+
+  .item
+    margin-top: 5px
+
+  .cb
+    margin-bottom: -20px
+    margin-top: 10px
+
+@media (max-width: 768px)
+  h1
+    margin-top: 0
+
+  #dashboard
+    font-size: 23px
+
+@media (max-width: 480px)
+  #dashboard
+    font-size: 20px
+
+    hr
+      width: 200px
+
+    h1
+      font-size: 37px
+
+    h2
+      font-size: 23px

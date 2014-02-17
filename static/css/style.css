@@ -1,13 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
-  margin: 0;
+  margin: 0 10px;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #348eda;
-  color: white; }
+  color: white;
+  height: 100%; }
 
 a {
   font-weight: bold;
-  color: white;
+  color: #b5d6f2;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -15,7 +16,7 @@ a {
 #dashboard {
   text-align: center;
   font-size: 37px;
-  margin-bottom: 20px; }
+  margin-bottom: 130px; }
   #dashboard hr {
     width: 300px;
     margin: 10px auto;
@@ -33,7 +34,7 @@ a {
     color: #ffbbbb; }
   #dashboard h1 {
     font-size: 60px;
-    margin-bottom: 0; }
+    margin-bottom: 10px; }
   #dashboard h2 {
     font-size: 37px;
     margin-bottom: 10px; }
@@ -47,3 +48,30 @@ a {
 .error {
   display: none;
   color: #ffbbbb; }
+
+#social {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 10px; }
+  #social .item {
+    margin-top: 5px; }
+  #social .cb {
+    margin-bottom: -20px;
+    margin-top: 10px; }
+
+@media (max-width: 768px) {
+  h1 {
+    margin-top: 0; }
+
+  #dashboard {
+    font-size: 23px; } }
+@media (max-width: 480px) {
+  #dashboard {
+    font-size: 20px; }
+    #dashboard hr {
+      width: 200px; }
+    #dashboard h1 {
+      font-size: 37px; }
+    #dashboard h2 {
+      font-size: 23px; } }
