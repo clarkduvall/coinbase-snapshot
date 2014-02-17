@@ -53,12 +53,19 @@ a {
   position: fixed;
   bottom: 0;
   left: 0;
-  margin: 10px; }
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 10px; }
   #social .item {
-    margin-top: 5px; }
+    margin-top: 8px; }
+    #social .item .inline {
+      display: inline-block; }
+  #social .fb {
+    position: relative;
+    bottom: 5px; }
   #social .cb {
     margin-bottom: -20px;
-    margin-top: 10px; }
+    margin-top: 5px; }
 
 @media (max-width: 768px) {
   h1 {
@@ -69,6 +76,8 @@ a {
 @media (max-width: 480px) {
   #dashboard {
     font-size: 20px; }
+    #dashboard .sub {
+      font-size: 20px; }
     #dashboard hr {
       width: 200px; }
     #dashboard h1 {

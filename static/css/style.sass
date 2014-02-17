@@ -71,14 +71,23 @@ a
   position: fixed
   bottom: 0
   left: 0
-  margin: 10px
+  padding: 10px
+  background: rgba(0, 0, 0, .5)
+  border-top-right-radius: 10px
 
   .item
-    margin-top: 5px
+    margin-top: 8px
+
+    .inline
+      display: inline-block
+
+  .fb
+    position: relative
+    bottom: 5px
 
   .cb
     margin-bottom: -20px
-    margin-top: 10px
+    margin-top: 5px
 
 @media (max-width: 768px)
   h1
@@ -90,6 +99,9 @@ a
 @media (max-width: 480px)
   #dashboard
     font-size: 20px
+
+    .sub
+      font-size: 20px
 
     hr
       width: 200px

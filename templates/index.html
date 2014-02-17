@@ -16,9 +16,13 @@
       <div class="sub">
         <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">Login</a> to see your balance, net profit, and orders
       </div>
+      {% else %}
+      <div class="sub">
+        Data refreshes every 20 seconds. <a href="#" class="refresh">Refresh now</a>
+      </div>
       {% endif %}
       <div class="sub error">
-        There was an error loading data. Please check your connection or <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">login</a> again.
+        There was an error loading data. Please refresh the page or <a href="https://coinbase.com/oauth/authorize?response_type=code&client_id={{ client_id }}&redirect_uri={{ redirect_url }}&scope=balance+orders+transfers">login</a> again.
       </div>
 
       <div>
@@ -68,14 +72,16 @@
       <div class="item">
         By <a href="http://clarkduvall.com" target="_blank">Clark DuVall</a><br>
       </div>
-      <div class="item">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="theclarkatron" data-hashtags="coinbase">Tweet</a>
-      </div>
-      <div class="item">
-        <div class="fb-share-button" data-href="http://www.coinbasesnapshot.com" data-type="button_count"></div>
-      </div>
       <div class="item cb">
         <a class="coinbase-button" data-code="e9f93199866c83543f48a219e232256e" data-button-style="donation_small" href="https://coinbase.com/checkouts/e9f93199866c83543f48a219e232256e">Donate Bitcoins</a>
+      </div>
+      <div class="item">
+        <div class="inline fb">
+          <div class="fb-share-button" data-href="http://www.coinbasesnapshot.com" data-type="button_count"></div>
+        </div>
+        <div class="inline">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="theclarkatron" data-hashtags="coinbase">Tweet</a>
+        </div>
       </div>
     </div>
 

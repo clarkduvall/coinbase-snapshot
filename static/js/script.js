@@ -55,6 +55,8 @@
   };
 
   Dashboard.prototype.update = function() {
+    clearTimeout(this.timeout);
+
     this.updateAnonymous();
     if (this.accessToken)
       this.updateAuthed();
@@ -223,6 +225,12 @@
 
   $(function() {
     var dashboard = new Dashboard(API_TOKEN);
+
+    $('.refresh').click(function(e) {
+      e.preventDefault();
+      dashboard.update();
+    });
+
     dashboard.update();
   });
 
