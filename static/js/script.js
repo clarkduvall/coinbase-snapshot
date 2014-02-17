@@ -1,6 +1,11 @@
 (function() {
+  function round(num, places) {
+    var rounder = Math.pow(10, places);
+    return Math.round(num * rounder) / rounder;
+  }
+
   function formatBTC(sel, amount) {
-    $(sel).text(amount + ' BTC');
+    $(sel).text(round(amount, 5) + ' BTC');
   }
 
   function formatUSD(sel, amount) {
