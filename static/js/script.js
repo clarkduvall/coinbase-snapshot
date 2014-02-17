@@ -72,7 +72,7 @@
   Dashboard.prototype.updateAnonymous = function() {
     this.getPrices(function() {
       formatUSD('.price-usd', this.priceUSD);
-      document.title = this.priceUSD + ' - Coinbase Snapshot';
+      document.title = this.priceUSD + ' • Coinbase Snapshot';
     }.bind(this));
   };
 
