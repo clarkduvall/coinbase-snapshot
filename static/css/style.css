@@ -15,8 +15,8 @@ a {
 
 #dashboard {
   text-align: center;
-  font-size: 37px;
-  margin-bottom: 140px; }
+  font-size: 31px;
+  margin-bottom: 20px; }
   #dashboard hr {
     width: 300px;
     margin: 10px auto;
@@ -33,17 +33,18 @@ a {
   #dashboard .neg {
     color: #ffbbbb; }
   #dashboard h1 {
-    font-size: 60px;
-    margin-bottom: 10px; }
+    font-size: 50px;
+    margin-bottom: 10px;
+    margin-top: 15px; }
   #dashboard h2 {
-    font-size: 37px;
+    font-size: 31px;
     margin-bottom: 10px; }
   #dashboard h3 {
-    font-size: 23px;
+    font-size: 19px;
     margin: 20px 0 0 0; }
 
 .sub {
-  font-size: 23px; }
+  font-size: 19px; }
 
 .error {
   display: none;
@@ -72,7 +73,8 @@ a {
     margin-top: 0; }
 
   #dashboard {
-    font-size: 23px; } }
+    font-size: 23px;
+    margin-bottom: 140px; } }
 @media (max-width: 480px) {
   #dashboard {
     font-size: 20px; }

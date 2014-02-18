@@ -109,7 +109,7 @@
         updateUI();
     }
 
-    // For some reason this gives a 401.
+    // Have to ask for more perms for this to work, probably not worth it.
     //this.getUser(done);
     this.getTransfers(done);
     this.getWorth(done);
