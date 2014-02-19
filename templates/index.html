@@ -29,14 +29,14 @@
       <div>
         <h2>Price</h2>
         <span class="btc">1 BTC</span> =
-        <span class="price-usd usd"></span>
+        <span class="price-usd usd"></span><span class="super"> *</span>
       </div>
 
       <div class="auth">
         <h2>Balance</h2>
         <div>
           <span class="balance-btc btc"></span> =
-          <span class="balance-usd usd"></span>
+          <span class="balance-usd usd"></span><span class="super"> &dagger;</span>
         </div>
 
         <h2>Net Gain/Loss</h2>
@@ -67,6 +67,11 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div id="key">
+      * Price computed using <a href="https://coinbase.com/api/doc/1.0/prices/spot_rate.html" target="_blank">spot rate</a><br>
+      &dagger; Price computed using <a href="https://coinbase.com/api/doc/1.0/prices/sell.html" target="_blank">sell rate</a>
     </div>
 
     <div id="social">
