@@ -91,7 +91,7 @@
           formatUSD('.balance-usd', this.balanceUSD);
           formatUSDDiff('.purchase-diff', diff);
 
-          if (this.ordersBTC || this.ordersUSD) {
+          if (this.ordersUSD > 0) {
             $('.orders').show();
             formatBTC('.orders-btc', this.ordersBTC);
             formatUSD('.orders-usd', this.ordersUSD);
@@ -143,7 +143,9 @@
       }, 0);
 
       this.apiCall('/prices/sell', function(data) {
-        this.ordersUSD = parseFloat(data.total.amount);
+        // Can't have a negative balance, but Coinbase fees can make it
+        // negative for small amounts.
+        this.ordersUSD = Math.max(0, parseFloat(data.total.amount));
 
         cb && cb();
       }.bind(this), {qty: this.ordersBTC});
@@ -177,7 +179,9 @@
       this.balanceBTC = parseFloat(data.amount);
 
       this.apiCall('/prices/sell', function(data) {
-        this.balanceUSD = parseFloat(data.total.amount);
+        // Can't have a negative balance, but Coinbase fees can make it
+        // negative for small amounts.
+        this.balanceUSD = Math.max(0, parseFloat(data.total.amount));
 
         cb && cb();
       }.bind(this), {qty: this.balanceBTC});
