@@ -19,6 +19,12 @@ API_CLIENT_SECRET = os.environ['API_CLIENT_SECRET']
 REDIRECT_URL = os.environ['REDIRECT_URL']
 
 
+def https_url_for(*args, **kwargs):
+    kwargs['_scheme'] = 'https'
+    kwargs['_external'] = True
+    return url_for(*args, **kwargs)
+
+
 @app.route('/callback')
 def callback():
     # Customize this code depending on Oauth API.
@@ -34,7 +40,7 @@ def callback():
         session['access_token'] =  response.json()['access_token']
         session['refresh_token'] =  response.json()['refresh_token']
 
-    return redirect(url_for('.index'))
+    return redirect(https_url_for('.index'))
 
 
 @app.route('/refresh')
@@ -60,7 +66,7 @@ def refresh():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('.index'))
+    return redirect(https_url_for('.index'))
 
 
 @app.route('/')
