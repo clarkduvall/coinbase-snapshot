@@ -197,6 +197,7 @@
       url: 'https://coinbase.com/api/v1' + url,
       data: data,
       dataType: 'jsonp',
+      jsonpCallback: 'invalid_callback_param',
       success: callback,
       complete: function() {
         var index = this.ajaxCalls.indexOf(xhr);
